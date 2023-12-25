@@ -1,0 +1,8 @@
+Model Information:
+* title:	Desktop Computer Table and Chair
+* source:	https://sketchfab.com/3d-models/desktop-computer-table-and-chair-3dd3fc07efdd445cae6d9b2ee827c01f
+* author:	Elvair Lima (https://sketchfab.com/elvair)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
