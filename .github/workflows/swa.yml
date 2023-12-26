@@ -40,7 +40,7 @@ jobs:
           NEXT_PUBLIC_SANITY_PROJECT_ID: "t0iy554"
           NEXT_PUBLIC_SANITY_DATASET: "blog-portfolio-dataset"
           NEXT_PUBLIC_SANITY_API_VERSION: "v2023-07-11"
-          NEXT_APP_SANITY_TOKEN: "sk638csioNb4cit6ntOhsN5wK6W4FffT2B9zAnRE8NR4o3jhWPw9iYkkxNDDRf1ZjBK8F6mQ8EPlmobEkjFYX4XJ9pccI5GUHXLr9SpflEuMbGtaNEtu27HxYhJA0bwguui7d0gLi0KsmOABMQPcDMMo08vSNGetcYjAzCzmvbmUkWmBXIXv"
+          NEXT_APP_SANITY_TOKEN: "skaprkaTSzsT1IDRcZM1dTy9gy2wpM9ICBJtZjJXJ1ySUB9MpWQWA9GwNnsZqPq7zoXic3BNkDPEcADOnNuuebGa6kVVapEF7uJk3WkPPXR6e3sy1g3p9hElW2YQms5KcsfYC2J39NBYNySXpgMrU2owhItLCN4OVQpig1wRpBjfX6tuifv2"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
