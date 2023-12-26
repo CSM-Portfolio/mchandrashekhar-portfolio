@@ -36,6 +36,7 @@ jobs:
           api_build_command: 'rm -rf ./node_modules/@next/swc-* && rm -rf ./.next/cache'
           ###### End of Repository/Build Configurations ######
         env: # Add environment variables here
+          IS_STATIC_EXPORT: true
           NEXT_PUBLIC_SANITY_PROJECT_ID: t0iy554
           NEXT_PUBLIC_SANITY_DATASET: blog-portfolio-dataset
           NEXT_PUBLIC_SANITY_API_VERSION: v2023-07-11
