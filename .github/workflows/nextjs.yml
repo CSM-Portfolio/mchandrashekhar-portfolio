@@ -82,7 +82,7 @@ jobs:
         with:
           path: ./out
 
-env: # Add environment variables here
+      - env: # Add environment variables here
           IS_STATIC_EXPORT: true
           NEXT_PUBLIC_SANITY_PROJECT_ID: "t0iy554"
           NEXT_PUBLIC_SANITY_DATASET: "blog-portfolio-dataset"
