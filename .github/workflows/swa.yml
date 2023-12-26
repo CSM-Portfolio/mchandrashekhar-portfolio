@@ -37,10 +37,10 @@ jobs:
           ###### End of Repository/Build Configurations ######
         env: # Add environment variables here
           IS_STATIC_EXPORT: true
-          NEXT_PUBLIC_SANITY_PROJECT_ID: t0iy554
-          NEXT_PUBLIC_SANITY_DATASET: blog-portfolio-dataset
-          NEXT_PUBLIC_SANITY_API_VERSION: v2023-07-11
-          NEXT_APP_SANITY_TOKEN: sk638csioNb4cit6ntOhsN5wK6W4FffT2B9zAnRE8NR4o3jhWPw9iYkkxNDDRf1ZjBK8F6mQ8EPlmobEkjFYX4XJ9pccI5GUHXLr9SpflEuMbGtaNEtu27HxYhJA0bwguui7d0gLi0KsmOABMQPcDMMo08vSNGetcYjAzCzmvbmUkWmBXIXv
+          NEXT_PUBLIC_SANITY_PROJECT_ID: "t0iy554"
+          NEXT_PUBLIC_SANITY_DATASET: "blog-portfolio-dataset"
+          NEXT_PUBLIC_SANITY_API_VERSION: "v2023-07-11"
+          NEXT_APP_SANITY_TOKEN: "sk638csioNb4cit6ntOhsN5wK6W4FffT2B9zAnRE8NR4o3jhWPw9iYkkxNDDRf1ZjBK8F6mQ8EPlmobEkjFYX4XJ9pccI5GUHXLr9SpflEuMbGtaNEtu27HxYhJA0bwguui7d0gLi0KsmOABMQPcDMMo08vSNGetcYjAzCzmvbmUkWmBXIXv"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
