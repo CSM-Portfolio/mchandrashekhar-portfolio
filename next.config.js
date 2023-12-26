@@ -6,11 +6,7 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'cdn.sanity.io',
-            },
-            {
-                protocol: 'https',
-                hostname: 'main.d1rtfn1i07f6ny.amplifyapp.com',
-            },
+            }
         ],
     },
 }
