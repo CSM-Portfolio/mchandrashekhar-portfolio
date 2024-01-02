@@ -8,11 +8,43 @@ import { RiInstagramFill } from "react-icons/ri";
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 import { motion } from "framer-motion";
+import { CreateVisitorSchema, createVisitorSchema } from "@/lib/validation/visitor";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import NavLogo from '../../public/assets/images/logo-no-background.png'
 
 const Contact = () =>
 {
+  const form = useForm<CreateVisitorSchema>( {
+    resolver: zodResolver( createVisitorSchema ),
+    defaultValues: {
+      email: "",
+      name: "",
+      subject: "",
+      message: "",
+      phone: "",
+    }
+  } );
+
+  async function onSubmit ( input: CreateVisitorSchema )
+  {
+    try
+    {
+      const response = await fetch( "/api/visitors", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify( input ),
+      } )
+
+      if ( !response.ok ) throw Error( "Status code: " + response.status );
+    } catch ( error )
+    {
+      console.log( error );
+      alert( "Something went wrong. Please try again!" );
+    }
+  }
+
   return (
     <>
       <div
@@ -75,7 +107,12 @@ const Contact = () =>
                     </textarea>
                   </div>
 
-                  <button className="w-full p-4 text-gray-100 mt-4 cursor-pointer text-xl">Send Message</button>
+                  <button
+                    className="w-full p-4 text-gray-100 mt-4 cursor-pointer text-xl"
+                    onSubmit={ () => ( onSubmit ) }
+                  >
+                    Send Message
+                  </button>
                 </form>
               </div>
             </div>

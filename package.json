@@ -6,12 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate"
   },
-  "engines": { "node": "18.x" },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@hookform/resolvers": "^3.3.3",
+    "@libsql/client": "^0.3.6",
     "@portabletext/react": "^3.0.11",
+    "@prisma/adapter-libsql": "^5.7.1",
+    "@prisma/client": "^5.7.1",
     "@radix-ui/react-slot": "^1.0.2",
     "@react-three/drei": "^9.89.0",
     "@react-three/fiber": "^8.15.11",
@@ -21,7 +28,8 @@
     "@sanity/preview-kit": "^5.0.1",
     "@sanity/vision": "^3.20.2",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
+    "clsx": "^2.1.0",
+    "dotenv": "^16.3.1",
     "framer-motion": "^10.16.5",
     "groq": "^3.20.2",
     "i": "^0.3.7",
@@ -31,9 +39,11 @@
     "next-sanity": "^6.1.3",
     "next-themes": "^0.2.1",
     "npm": "^10.2.4",
+    "prisma": "^5.7.1",
     "react": "^18.2.0",
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.49.2",
     "react-hydration-provider": "^2.1.0",
     "react-icons": "^4.12.0",
     "react-simple-typewriter": "^5.0.1",
@@ -44,9 +54,10 @@
     "sanity-plugin-iframe-pane": "^2.6.1",
     "sharp": "^0.33.0",
     "styled-components": "^6.1.1",
-    "tailwind-merge": "^2.0.0",
+    "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.158.0"
+    "three": "^0.158.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",

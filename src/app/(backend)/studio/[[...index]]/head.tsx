@@ -8,7 +8,7 @@ export default function CustomStudioHead ()
 {
   return (
     <>
-      <title>CSM Portfolio Content Studio111</title>
+      <title>CSM Portfolio Content Studio</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/assets/images/logo-black.png" />
       {/* <NextStudioHead favicons={ true } />       */}
