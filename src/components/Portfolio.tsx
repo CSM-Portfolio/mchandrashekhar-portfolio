@@ -20,18 +20,18 @@ export default function Portfolio ( { works, projectTags }: Props )
 {
 
   return (
-    <div
+      <section
       id="portfolio"
-      className="w-full h-screen lg:mt-[600px]"
+      className="w-full mt-[900px] md:mt-[600px]"
       style={ {
         backgroundImage: "linear-gradient(26deg,#fff 0 40%, #f8f9fb  0% 100%)",
       } }  
     >
-      <div className="max-w-[12400px] mx-auto px-2 py-20 mr-10 ml-10" >
+      <div className="mx-auto px-16 py-16" >
 
         <div className="md:grid grid-cols-3 gap-8">
           <div className='col-span-3'>
-            <div className='w-full bg-transparent flex items-center justify-center rounded-xl pb-10'>
+            <div className='w-full bg-transparent flex flex-col md:flex-row items-center justify-center rounded-xl pb-10'>
 
               <Image
                 className=''
@@ -67,11 +67,11 @@ export default function Portfolio ( { works, projectTags }: Props )
         </div>
 
         {/* <Link href='/projects/projects-page' className="flex items-center justify-end mt-10">
-          <p className='underline cursor-pointer flex items-center justify-start font-bold text-xl' > <FaLaptopCode className='pr-2 text-4xl' /> All Projects </p>
+          <p className='underline cursor-pointer flex items-center justify-start font-bold text-xl' > <FaLaptopCode className='pr-2 text-4xl' /> View All </p>
         </Link> */}
 
       </div>
-    </div>
+    </section>
   )
 }
 

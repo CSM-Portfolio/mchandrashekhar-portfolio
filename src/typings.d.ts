@@ -115,7 +115,7 @@ interface Technology extends Base
 interface Work extends Base {
   projectName: string;
   slug?: Slug;
-  description: string;
+  description: Block[];
   projectLink: string;
   codeLink: string;
   mainImage: Image;

@@ -1,0 +1,67 @@
+{
+  "id": "mig_cmacrq523j3qskm6gavg",
+  "checksum": "1:8af58b07638d2862baa38b3aa86daf01048aad25cdd79c090daba44d9c500ef5",
+  "operations": [
+    {
+      "addTable": {
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "emailAddress",
+          "type": "email"
+        },
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "phone",
+          "type": "string"
+        },
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string"
+        },
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "subject",
+          "type": "text"
+        },
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "message",
+          "type": "text"
+        },
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "createdAt",
+          "type": "datetime",
+          "notNull": true,
+          "defaultValue": "now"
+        },
+        "table": "visitors"
+      }
+    }
+  ]
+}

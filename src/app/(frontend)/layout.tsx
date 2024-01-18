@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 
 import Navbar from '../../components/Navbar'
 import Providers from '../../components/Providers'
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,7 +25,8 @@ export default function RootLayout({
           <Navbar/>
           <main className ='my-auto flex-grow'>
             { children }            
-          </main>             
+          </main>        
+          <Toaster />     
         </Providers>
       </body>
     </html>

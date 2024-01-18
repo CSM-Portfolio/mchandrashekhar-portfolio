@@ -74,15 +74,14 @@ const Skills = ( { skills, skillTags }: Props ) =>
 
     return (
         <>
-            <div
+            <section
                 id='skills'
-                className='w-full lg:h-screen p-2'
+                className='lg:py-24 w-full h-screen pl-10  pr-10'
             >
-
-                <div className='max-w-screen-xl mx-auto px-2 py-20'>
+                <div className='mx-auto flex flex-col justify-center'>
                     <div className='md:grid grid-cols-3 gap-8'>
                         <div className='col-span-3'>
-                            <div className='w-full bg-transparent flex items-center justify-center rounded-xl pb-10'>
+                            <div className='w-full bg-transparent flex flex-col md:flex-row items-center justify-center rounded-xl pb-10'>
                                 <h2 className='app-types uppercase text-2xl tracking-widest text-[#F19E11]'>
                                     My Key{ ' ' }
                                     <span className='text-[#f12711] tracking-widest'>Skills</span>
@@ -101,15 +100,15 @@ const Skills = ( { skills, skillTags }: Props ) =>
 
                 {/* Skills Summary Cards */ }
 
-                <div className=''>
+                <div className='mt-32'>
                     <div
                         style={ {
                             backgroundImage: "linear-gradient(45deg, #ecf0f3  70%,#f12711 30%)",
                             width: "100%",
                         } }
-                        className="lg:mt-16"
                     >
-                        <section className="container flex  flex-col m-auto sm:flex-row px-5 md:px-24 mt-[50px sm:mt-0] transform translate-y-[-100px]">
+                        {/* className="lg:mt-[550px]" */ }
+                        <section className="container flex  flex-col m-auto sm:flex-row px-5 md:px-24 mt-[50px sm:mt-] transform translate-y-[-100px]">
                             <div className=" hidden sm:flex w-full sm:w-1/2 lg:w-7/12">
                                 <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 mr-0 lg:mr-10">
                                     { AboutData.map( ( item, index ) => (
@@ -231,9 +230,9 @@ const Skills = ( { skills, skillTags }: Props ) =>
 
                 {/* Skills Card */ }
                 <div
-                    className='max-w-screen-xl mx-auto px-2 py-1'
+                    className=''
                 >
-                    <div className="max-w-screen-xl mx-auto px-2 py-6">
+                    <div className="max-w-full mx-auto px-2 py-6">
                         {/* <div className='flex flex-row items-center justify-center flex-wrap'>
                             { skillTags.map( ( SkillTag, index ) => (
                                 <div
@@ -269,7 +268,7 @@ const Skills = ( { skills, skillTags }: Props ) =>
 
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }

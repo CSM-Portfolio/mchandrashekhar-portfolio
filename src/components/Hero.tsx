@@ -156,10 +156,10 @@ const Hero = () =>
 
                 <div className="col-span-8 place-self-center text-center sm:text-left justify-self-end">
                     <div className="">
-                        <p className='text-2xl md:text-4xl md:ml-36 lg:ml-0 tracking-widest text-gray-600 punch py-10'>
+                        <p className='text-2xl md:text-4xl md:ml-36 lg:ml-0 tracking-widest text-gray-600 punch  sm:py-4 md:py-10'>
                             Let&#39;s build something legendary together
                         </p>
-                        <h1 className='py-4 text-xl lg:text-4xl lg:ml-0 md:text-[23px] text-gray-700 md:ml-48'>
+                        <h1 className='py-4 sm:text-md text-xl lg:text-4xl lg:ml-0 md:text-[23px] text-gray-700 md:ml-48'>
                             👋 Hello, I &#39;m{ ' ' }
                             <br />
                             <span className='lg:px-14 md:px-8'>

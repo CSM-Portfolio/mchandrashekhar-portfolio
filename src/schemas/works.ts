@@ -1,42 +1,43 @@
 import { defineField, defineType } from 'sanity'
 import { MdWork } from "react-icons/md";
+import { SlugInput } from 'sanity-plugin-prefixed-slug'
 
-export default defineType( {
+export default defineType({
   name: 'works',
   title: 'Works',
-  type: 'document',   
+  type: 'document',
   icon: MdWork,
   fields: [
-     defineField( {
+    defineField({
       name: 'projectName',
       title: 'Project Name',
       type: 'string',
     }),
-     defineField( {
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
-        maxLength: 96,
+        source: 'projectName',
+        maxLength: 300,
       },
-    }),   
-     defineField( {
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
-      type: 'string',
+      type: 'blockContent',
     }),
-     defineField( {
+    defineField({
       name: 'projectLink',
       title: 'Project Link',
       type: 'string',
     }),
-    defineField( {
+    defineField({
       name: 'codeLink',
       title: 'Code Link',
       type: 'string',
     }),
-    defineField( {
+    defineField({
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',
@@ -44,19 +45,19 @@ export default defineType( {
         hotspot: true,
       },
     }),
-    defineField( {
+    defineField({
       name: 'projectTags',
       title: 'Project Tags',
       type: 'array',
-      of: [ { type: 'reference', to: { type: 'projectTags' } } ],
+      of: [{ type: 'reference', to: { type: 'projectTags' } }],
     }),
-     defineField( {
+    defineField({
       name: 'technologies',
       title: 'Technologies',
       type: 'array',
-     of: [ { type: 'reference', to: { type: 'technology' } } ],
+      of: [{ type: 'reference', to: { type: 'technology' } }],
     }),
-     defineField( {
+    defineField({
       name: 'architectureDiagram',
       title: 'Architecture Diagram',
       type: 'image',
@@ -64,10 +65,10 @@ export default defineType( {
         hotspot: true,
       },
     }),
-    defineField( {
+    defineField({
       name: 'architectureDescription',
       title: 'Architecture Description',
       type: 'string',
-    })
+    }),
   ],
 });

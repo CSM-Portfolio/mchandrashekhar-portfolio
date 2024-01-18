@@ -3,7 +3,7 @@ import { client } from '../lib/sanity.client';
 import { Skill, Work, ProjectTag, SkillTag } from '../typings';
 
 export const skillsQuery = groq`
-    *[_type == "skills"]{
+    *[_type == "skills"] | order(_createdAt)  {
       ...
      }
 `;
@@ -15,13 +15,13 @@ export const worksQuery = groq`
 `;
 
 export const projectTagsQuery = groq`
-    *[_type == "projectTag"]{
+    *[_type == "projectTag"]  | order(_createdAt) {
       ...
      }
 `;
 
 export const skillTagsQuery = groq`
-    *[_type == "skillTag"]{
+    *[_type == "skillTag"]  | order(_createdAt) {
       ...
      }
 `;
@@ -72,7 +72,7 @@ export async function getWorkBySlug(querySlug: string) {
       architectureDescription,
       projectLink,
       codeLink,
-      projectTag[] -> {
+      projectTags[] -> {
         _id,
         title
       },

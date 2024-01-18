@@ -3,6 +3,7 @@ import { getWorkBySlug } from "@/utils/fetchPortfolioDetails ";
 import { Work } from '@/typings';
 import PortfolioProjectDetails from '@/components/PortfolioProjectDetails';
 
+
 export const revalidate = 100;
 
 export default async function ProjectDetailPage ( { params }: any )

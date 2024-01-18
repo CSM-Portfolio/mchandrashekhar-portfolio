@@ -1,0 +1,30 @@
+{
+    "formatVersion": "1",
+    "tables": [
+        {
+            "name": "visitors",
+            "columns": [
+                {
+                    "name": "emailAddress",
+                    "type": "email"
+                },
+                {
+                    "name": "phone",
+                    "type": "string"
+                },
+                {
+                    "name": "visitorName",
+                    "type": "string"
+                },
+                {
+                    "name": "subject",
+                    "type": "text"
+                },
+                {
+                    "name": "message",
+                    "type": "text"
+                }
+            ]
+        }
+    ]
+}

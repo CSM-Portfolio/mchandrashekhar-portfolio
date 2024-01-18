@@ -1,6 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Solitreo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+  /* height: 4px;
+  width: 4px; */
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f8ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4974a5;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  --line-color: #e5e7eb;
+}
+
+body {
+  background-color: #fff;
+}
+
  
 @layer base {
   :root {
@@ -71,6 +102,77 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide;
+  }
+}
+
+h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  .punch {
+    font-family: 'The Nautigal', cursive;
+  }
+
+  .bad-script {
+    font-family: 'Bad Script', cursive;
+  }
+
+  .app-types {
+    font-family: 'Solitreo', cursive;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway];
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  li {
+    @apply cursor-pointer;
+  }
+
+  button {
+    @apply shadow-2xl shadow-gray-400 rounded-xl uppercase bg-[#F19E11] text-black;
+  }
+
+.canvas-loader {
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  transform: translateZ(0);
+}
+
+/*responsible for the   blue tick when  a link is clicked */
+.menu-effect {
+  left: -0.75rem;
+  top: 0.125rem;
+  z-index: -10;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.5rem;
+  background-color: #48afde;
+  transition-duration: 0.5s;
+  position: absolute;
+}
+
+@media screen and (max-width: 900px) {
+  .ground-color-change {
+    background: linear-gradient(
+      90deg,
+      rgba(238, 247, 251, 1) 55%,
+      rgba(255, 255, 255, 1) 55%
+    );
   }
 }

@@ -1,36 +1,36 @@
-import { createVisitorSchema } from "@/lib/validation/visitor";
-import prisma from "@/lib/db/prisma";
+import { NextResponse } from 'next/server';
 
-export async function POST ( req: Request )
+import { createVisitorSchema } from '@/lib/validation/visitor';
+import { xata } from '@/utils/xata';
+
+export async function POST ( request: Request )
 {
     try
     {
-        const body = await req.json();
+        const body = await request.json();
 
         const parseResult = createVisitorSchema.safeParse( body );
 
         if ( !parseResult.success )
         {
             console.log( parseResult.error );
-            return Response.json( { error: "Invalid request body" }, { status: 400 } );
+            return Response.json( { error: 'Invalid request body' }, { status: 400 } );
         }
 
-        const { email, name, subject, message, phone } = parseResult.data;
+        const { emailAddress, visitorName, subject, message, phone } = parseResult.data;
 
-        const visitor = await prisma.visitor.create( {
-            data: {
-                email,
-                name,
-                subject,
-                message,
-                phone
-            }
+        const visitor = await xata.db.visitors.create( {
+            emailAddress,
+            visitorName,
+            subject,
+            message,
+            phone,
         } );
 
-        return Response.json( { visitor }, { status: 201 } );
+        return NextResponse.json( { visitor }, { status: 201 } );
     } catch ( error )
     {
         console.log( error );
-        return Response.json( { error: "Internal server error !" }, { status: 500 } );
+        return NextResponse.json( { error: 'Internal server error !' }, { status: 500 } );
     }
 }

@@ -6,7 +6,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Portfolio from '../../components/Portfolio';
+import Portfolio from "@/components/Portfolio";
 
 import { getAllSkills, getAllWorks, getAllskillTags, getAllprojectTags } from '@/utils/fetchPortfolioDetails ';
 
@@ -21,13 +21,13 @@ export default async function Home ()
 
   return (
     <>
-      <div>
+      <div className="">
         <Hero />
         <About />
         <Skills skills={ skills } skillTags={ skillTags } />
         <Portfolio works={ works } projectTags={ projectTags } />
         <Contact />
-        {/* <Footer/> */}
+        {/* <Footer/> */ }
       </div>
     </>
   );

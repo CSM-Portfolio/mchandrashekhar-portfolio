@@ -1,3 +1,6 @@
+import HILLogo from '../../public/assets/companies/HIL.png';
+import HCLTechLogo from '../../public/assets/companies/hcltech-new-logo.svg';
+
 export const AboutData = [
   {
     count: 1,
@@ -60,27 +63,76 @@ export const AboutData = [
 
 export const ExperiencesData = [
   {
+    id: 1,
     title: 'Lead Technical Consultant',
     company_name: 'HIL Limited',
-    icon: '/assets/companies/HIL.png',
-    iconBg: '#accbe1',
-    date: 'Sep 2019 - Present',
-    points: [
-      'Proficiently overseeing a spectrum of responsibilities spanning web and mobile application development, DevOps, Architecting Applicaions, and stakeholder engagement. ',
-      'In-house application development with proficiency in MEAN Stack, MERN Stack, and Generative AI.',
-      'Production application support for in-house applications crafted with .NET and Angular/ReactJS, ensuring seamless operations and optimal efficiency',
-    ],
-  },
-  {
-    title: 'Technical Lead',
-    company_name: 'HCL Limited',
-    icon: '/assets/companies/HIL.png',
+    icon: HILLogo,
     iconBg: '#ffff',
     date: 'Sep 2019 - Present',
-    points: [
-      'Proficiently overseeing a spectrum of responsibilities spanning web and mobile application development, DevOps, Architecting Applicaions, and stakeholder engagement. ',
-      'In-house application development with proficiency in MEAN Stack, MERN Stack, and Generative AI.',
-      'Production application support for in-house applications crafted with .NET and Angular/ReactJS, ensuring seamless operations and optimal efficiency',
-    ],
   },
-];
+  {
+    id: 2,
+    title: 'Senior Consultant',
+    company_name: 'HCLTech',
+    icon: HCLTechLogo,
+    iconBg: '#ffff',
+    date: 'Dec 2016 - Aug 2019',
+  },
+  {
+    id: 2,
+    title: 'Senior Consultant',
+    company_name: 'HCLTech',
+    icon: HCLTechLogo,
+    iconBg: '#ffff',
+    date: 'Dec 2016 - Aug 2019',
+  },
+  {
+    id: 2,
+    title: 'Senior Consultant',
+    company_name: 'HCLTech',
+    icon: HCLTechLogo,
+    iconBg: '#ffff',
+    date: 'Dec 2016 - Aug 2019',
+  },
+  {
+    id: 2,
+    title: 'Senior Consultant',
+    company_name: 'HCLTech',
+    icon: HCLTechLogo,
+    iconBg: '#ffff',
+    date: 'Dec 2016 - Aug 2019',
+  },
+  {
+    id: 2,
+    title: 'Senior Consultant',
+    company_name: 'HCLTech',
+    icon: HCLTechLogo,
+    iconBg: '#ffff',
+    date: 'Dec 2016 - Aug 2019',
+  },
+  {
+    id: 2,
+    title: 'Senior Consultant',
+    company_name: 'HCLTech',
+    icon: HCLTechLogo,
+    iconBg: '#ffff',
+    date: 'Dec 2016 - Aug 2019',
+  },
+  {
+    id: 2,
+    title: 'Senior Consultant',
+    company_name: 'HCLTech',
+    icon: HCLTechLogo,
+    iconBg: '#ffff',
+    date: 'Dec 2016 - Aug 2019',
+  },
+  {
+    id: 2,
+    title: 'Senior Consultant',
+    company_name: 'HCLTech',
+    icon: HCLTechLogo,
+    iconBg: '#ffff',
+    date: 'Dec 2016 - Aug 2019',
+  },
+  
+] as const;

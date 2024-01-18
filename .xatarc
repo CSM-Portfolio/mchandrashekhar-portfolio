@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Chandrashekhar-Marella-s-workspace-qji2cc.us-east-1.xata.sh/db/mchandrashekhar-portfolio-db",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

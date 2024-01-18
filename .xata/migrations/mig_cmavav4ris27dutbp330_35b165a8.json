@@ -1,0 +1,57 @@
+{
+  "id": "mig_cmavav4ris27dutbp330",
+  "parentID": "mig_cmav8t4ris27dutbp30g",
+  "checksum": "1:35b165a827306accd6c41609fc958341fd3396d139216337364aa5aa2d2fc528",
+  "operations": [
+    {
+      "addTable": {
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "emailAddress",
+          "type": "email"
+        },
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "phone",
+          "type": "string"
+        },
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "visitorName",
+          "type": "string"
+        },
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "subject",
+          "type": "text"
+        },
+        "table": "visitors"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "message",
+          "type": "text"
+        },
+        "table": "visitors"
+      }
+    }
+  ]
+}

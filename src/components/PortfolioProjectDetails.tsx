@@ -1,11 +1,12 @@
 import React from 'react';
-
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from 'next/link';
 import { RiRadioButtonFill, RiArrowGoBackFill } from 'react-icons/ri';
 
 import urlFor from '@/lib/urlFor';
 import { Work } from '@/typings';
+import { RichTextComponents } from "./RichTextComponents";
 
 interface Props
 {
@@ -13,12 +14,12 @@ interface Props
 }
 
 const PortfolioProjectDetails = ( { work }: Props ) =>
-{
+{  
     return (
         <>      
             <div className='w-full mb-20' >
                 <div className='w-screen h-[50vh] relative '>
-                    <div className='absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10' />
+                    <div className='absolute top-0 left-0 w-full h-[50vh] bg-black/40 z-10' />
                     <Image
                         className='absolute z-1'
                         fill
@@ -57,10 +58,13 @@ const PortfolioProjectDetails = ( { work }: Props ) =>
                             <p className='underline cursor-pointer flex items-center justify-start font-bold text-xl' > <RiArrowGoBackFill className='pr-1' /> Back </p>
                         </Link>
 
-                        <p className="text-start font-bold pb-2 text-3xl pt-10"> { work?.projectName } </p>
-                        <h2 className="text-start font-bold pb-2 text-xl pt-4"> Overview </h2>
+                        <p className="text-start font-extrabold pb-2 text-3xl pt-10 text-[#F19E11]"> { work?.projectName } </p>
+                        <h2 className="text-start font-bold pb-2 text-2xl pt-4"> Overview </h2>
 
-                        <p> { work?.description } </p>
+                        {/* <p> { work?.description } </p> */ }
+                        <section className="space-y-5 pt-5">
+                            <PortableText value={ work?.description } components={ RichTextComponents } />
+                        </section>
 
                         {/* <p className='text-start font-bold pb-2 mt-8 text-xl' > Architecture Diagram </p>
                         <div className='m-auto'>

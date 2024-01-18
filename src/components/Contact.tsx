@@ -11,16 +11,25 @@ import { motion } from "framer-motion";
 import { CreateVisitorSchema, createVisitorSchema } from "@/lib/validation/visitor";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 import NavLogo from '../../public/assets/images/logo-no-background.png'
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from './ui/form';
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Button } from "./ui/button";
+import { useToast } from "@/components/ui/use-toast"
 
 const Contact = () =>
 {
+  const router = useRouter();
+  const { toast } = useToast();
+
   const form = useForm<CreateVisitorSchema>( {
     resolver: zodResolver( createVisitorSchema ),
     defaultValues: {
-      email: "",
-      name: "",
+      emailAddress: "",
+      visitorName: "",
       subject: "",
       message: "",
       phone: "",
@@ -38,18 +47,39 @@ const Contact = () =>
       } )
 
       if ( !response.ok ) throw Error( "Status code: " + response.status );
+
+      // Send Mail Functionality
+
+      const sendMailResponse = await fetch( "/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify( input ),
+      } )
+
+      if ( !sendMailResponse.ok ) throw Error( "Status code: " + sendMailResponse.status );
+
+      form.reset();
+      toast( {
+        description: "EMail sent successfully!",
+      } )
+      router.refresh()
+
     } catch ( error )
     {
       console.log( error );
-      alert( "Something went wrong. Please try again!" );
+      toast( {
+        variant: "destructive",
+        description: "Something went wrong. Please try again!",
+      } )
     }
   }
 
   return (
+    //  mt-[750px]
     <>
-      <div
+      <section
         id="contact"
-        className="w-full lg:h-screen mt-[750px] lg:mt-[0px]"
+        className="w-full lg:h-screen"
         style={ {
           backgroundImage: "linear-gradient(62deg,#fff 0 50%, #fff 0% 100%)",
         } }
@@ -57,7 +87,19 @@ const Contact = () =>
         <div className="max-w-[1240px] m-auto px-2 py-24 w-full">
           <div className="md:grid grid-cols-3 gap-8">
             <div className="col-span-3">
-              <div className="w-full bg-transparent flex items-center justify-center md:justify-end rounded-xl pb-0">
+              <div className="w-full bg-transparent flex flex-col md:flex-row items-center justify-center rounded-xl pb-0">
+
+               <h2 className='app-types uppercase text-2xl tracking-widest text-[#F19E11]'>
+                  Get In{ ' ' }
+                  <span className='text-[#f12711] tracking-widest'>Touch</span>
+                </h2>
+
+                {/* <h2 className='app-types uppercase text-2xl tracking-widest text-[#F19E11] '>
+                  Grab A{ ' ' }
+                  <p className='text-[#f12711] tracking-widest'>Coffee</p> &
+                  <p className='text-[#f12711] tracking-widest'>&nbsp;Chat </p>{ ' ' }With Me
+                </h2> */}
+
                 <Image
                   className=""
                   width={ 180 }
@@ -65,10 +107,6 @@ const Contact = () =>
                   src="/assets/3D-Businessman/wbg/3d_businessman_pointing_to_empty_wall_-_M-removebg-preview.png"
                   alt="3d businessman pointing to empty wall"
                 />
-                <h2 className='app-types uppercase text-2xl tracking-widest text-[#F19E11]'>
-                  Get In{ ' ' }
-                  <span className='text-[#f12711] tracking-widest'>Touch</span>
-                </h2>
 
               </div>
             </div>
@@ -79,41 +117,93 @@ const Contact = () =>
             {/*Left*/ }
             <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
               <div className="p-4">
-                <form>
-
-                  <div className="flex flex-col py-2">
-                    <label className="uppercase text-sm py-2"> Name </label>
-                    <input className="border-2 rounded-lg p-3 flex border-gray-300" type="text" />
-                  </div>
-
-                  <div className="flex flex-col py-2">
-                    <label className="uppercase text-sm py-2" > Phone Number </label>
-                    <input className="border-2 rounded-lg p-3 flex border-gray-300" type="text" />
-                  </div>
-
-                  <div className="flex flex-col py-2">
-                    <label className="uppercase text-sm py-2" > Email </label>
-                    <input className="border-2 rounded-lg p-3 flex border-gray-300" type="email" />
-                  </div>
-
-                  <div className="flex flex-col py-2">
-                    <label className="uppercase text-sm py-2" > Subject </label>
-                    <input className="border-2 rounded-lg p-3 flex border-gray-300" type="text" />
-                  </div>
-
-                  <div className="flex flex-col py-2">
-                    <label className="uppercase text-sm py-2" > Message </label>
-                    <textarea className="border-2 rounded-lg p-3 border-gray-300" rows={ 4 }>
-                    </textarea>
-                  </div>
-
-                  <button
-                    className="w-full p-4 text-gray-100 mt-4 cursor-pointer text-xl"
-                    onSubmit={ () => ( onSubmit ) }
+                {/* Form */ }
+                <Form { ...form }>
+                  <form
+                    onSubmit={ form.handleSubmit( onSubmit ) }
+                    className="space-y-4"
                   >
-                    Send Message
-                  </button>
-                </form>
+                    <FormField
+                      control={ form.control }
+                      name="visitorName"
+                      render={ ( { field } ) => (
+                        <FormItem>
+                          <FormLabel className="uppercase text-sm py-2 required">Name</FormLabel>
+                          <FormControl className="border-2 rounded-lg p-3 flex border-gray-300" >
+                            <Input placeholder="Enter your name" { ...field } />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      ) }
+                    />
+
+                    <FormField
+                      control={ form.control }
+                      name="phone"
+                      render={ ( { field } ) => (
+                        <FormItem>
+                          <FormLabel className="uppercase text-sm py-2 required">Phone Number</FormLabel>
+                          <FormControl className="border-2 rounded-lg p-3 flex border-gray-300" >
+                            <Input placeholder="Enter your phone number" { ...field } />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      ) }
+                    />
+
+                    <FormField
+                      control={ form.control }
+                      name="emailAddress"
+                      render={ ( { field } ) => (
+                        <FormItem>
+                          <FormLabel className="uppercase text-sm py-2 required">email</FormLabel>
+                          <FormControl className="border-2 rounded-lg p-3 flex border-gray-300" >
+                            <Input placeholder="Enter you e-Mail ID" { ...field } />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      ) }
+                    />
+                    <FormField
+                      control={ form.control }
+                      name="subject"
+                      render={ ( { field } ) => (
+                        <FormItem>
+                          <FormLabel className="uppercase text-sm py-2 required">subject</FormLabel>
+                          <FormControl className="border-2 rounded-lg p-3 flex border-gray-300" >
+                            <Input placeholder="Enter subject" { ...field } />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      ) }
+                    />
+
+                    <FormField
+                      control={ form.control }
+                      name="message"
+                      render={ ( { field } ) => (
+                        <FormItem>
+                          <FormLabel className="uppercase text-sm py-2 required">message</FormLabel>
+                          <FormControl className="border-2 rounded-lg p-3 border-gray-300" >
+                            <Textarea placeholder="Type your message" { ...field } />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      ) }
+                    />
+
+                    <Button
+                      className="w-full p-4 text-gray-100 mt-4 cursor-pointer text-xl h-22 shadow-2xl shadow-gray-400 rounded-xl uppercase bg-[#F19E11]"
+                      type="submit"
+                    >
+                      Send Message
+                    </Button>
+
+                  </form>
+                </Form>
+                <p className="text-xs mt-8 text-blue-800">
+                  Missed the acknowledgment email? Peek into your junk folder! If found, hit "Not Spam" for seamless inbox delivery. 📬
+                </p>
               </div>
             </div>
 
@@ -221,7 +311,7 @@ const Contact = () =>
 
 
 
-      </div>
+      </section>
     </>
   );
 

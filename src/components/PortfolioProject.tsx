@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { PiArrowBendDoubleUpRightBold } from "react-icons/pi";
 
 import { Work } from '../typings';
-import urlFor from '../lib/urlFor';
+import urlFor from '@/lib/urlFor';
 interface Props
 {
   work: Work;
