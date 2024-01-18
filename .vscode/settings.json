@@ -3,5 +3,6 @@
         "scae"
     ],
     "WillLuke.nextjs.addTypesOnSave": true,
-    "WillLuke.nextjs.hasPrompted": true
+    "WillLuke.nextjs.hasPrompted": true,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }

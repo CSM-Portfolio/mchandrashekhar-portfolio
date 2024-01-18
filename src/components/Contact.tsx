@@ -202,7 +202,7 @@ const Contact = () =>
                   </form>
                 </Form>
                 <p className="text-xs mt-8 text-blue-800">
-                  Missed the acknowledgment email? Peek into your junk folder! If found, hit "Not Spam" for seamless inbox delivery. 📬
+                  Missed the acknowledgment email? Peek into your junk folder! If found, hit &quot;Not Spam&quot; for seamless inbox delivery. 📬
                 </p>
               </div>
             </div>

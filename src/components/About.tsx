@@ -6,7 +6,6 @@ import { FaHandPointLeft } from "react-icons/fa";
 import Link from 'next/link';
 
 import styles from './About.module.css';
-import Experiences from "@/components/Experiences";
 
 const About = () =>
 {
@@ -83,9 +82,7 @@ const About = () =>
                 alt='Laptop with a cofee mug'
               />
             </div>  
-          </div>
-
-          {/* <Experiences className="" /> */}
+          </div>       
           
         </div>     
 
